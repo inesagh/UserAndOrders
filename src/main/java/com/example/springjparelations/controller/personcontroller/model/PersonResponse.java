@@ -1,7 +1,6 @@
 package com.example.springjparelations.controller.personcontroller.model;
 
 import com.example.springjparelations.controller.addresscontroller.model.AddressResponse;
-import com.example.springjparelations.persistence.model.Address;
 
 public class PersonResponse {
     private Long id;
@@ -12,13 +11,14 @@ public class PersonResponse {
     private String phoneNumber;
     private String username;
     private AddressResponse address;
+    private String role;
 
     public PersonResponse() {
     }
 
     public PersonResponse(Long id, String name, String surname, int age,
                           String email, String phoneNumber, String username,
-                          AddressResponse address) {
+                          AddressResponse address, String role) {
         this.id = id;
         this.name = name;
         this.surname = surname;
@@ -27,6 +27,15 @@ public class PersonResponse {
         this.phoneNumber = phoneNumber;
         this.username = username;
         this.address = address;
+        this.role = role;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 
     public Long getId() {

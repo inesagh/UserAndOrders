@@ -1,5 +1,6 @@
 package com.example.springjparelations.converter;
 
+import com.example.springjparelations.annotation.Converter;
 import com.example.springjparelations.controller.productcontroller.model.ProductRequest;
 import com.example.springjparelations.controller.productcontroller.model.ProductResponse;
 import com.example.springjparelations.persistence.model.Product;
@@ -8,7 +9,7 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@Component
+@Converter
 public class ProductConverter {
     public ProductResponse convertToResponse(Product product){
         ProductResponse productResponse = new ProductResponse();

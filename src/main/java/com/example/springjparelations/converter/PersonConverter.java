@@ -1,5 +1,6 @@
 package com.example.springjparelations.converter;
 
+import com.example.springjparelations.annotation.Converter;
 import com.example.springjparelations.controller.addresscontroller.model.AddressResponse;
 import com.example.springjparelations.controller.personcontroller.model.PersonResponse;
 import com.example.springjparelations.persistence.model.Address;
@@ -9,7 +10,7 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@Component
+@Converter
 public class PersonConverter {
 
     private final AddressConverter addressConverter;

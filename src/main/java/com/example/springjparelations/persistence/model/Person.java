@@ -20,6 +20,7 @@ public class Person {
     private String username;
     @Column(unique = true)
     private String password;
+    private String role;
 
     @OneToOne
     private Address address;
@@ -30,7 +31,7 @@ public class Person {
     }
 
     public Person(Long id, String name, String surname, int age, String email,
-                  String phoneNumber, String username, String password) {
+                  String phoneNumber, String username, String password, String role) {
         this.id = id;
         this.name = name;
         this.surname = surname;
@@ -39,10 +40,11 @@ public class Person {
         this.phoneNumber = phoneNumber;
         this.username = username;
         this.password = password;
+        this.role = role;
     }
 
     public Person(Long id, String name, String surname, int age, String email,
-                  String phoneNumber, String username, String password, Address address) {
+                  String phoneNumber, String username, String password, String role, Address address) {
         this.id = id;
         this.name = name;
         this.surname = surname;
@@ -51,6 +53,7 @@ public class Person {
         this.phoneNumber = phoneNumber;
         this.username = username;
         this.password = password;
+        this.role = role;
         this.address = address;
     }
 
@@ -135,5 +138,12 @@ public class Person {
         for (Order order : orders) {
             order.setPerson(this);
         }
+    }
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 }

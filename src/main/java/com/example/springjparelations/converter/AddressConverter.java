@@ -6,7 +6,7 @@ import com.example.springjparelations.controller.addresscontroller.model.Address
 import com.example.springjparelations.persistence.model.Address;
 import org.springframework.stereotype.Component;
 
-@Component
+@Converter
 public class AddressConverter {
 
     public Address convertToEntity(AddressRequest request){

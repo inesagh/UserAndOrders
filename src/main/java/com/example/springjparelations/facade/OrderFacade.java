@@ -1,5 +1,6 @@
 package com.example.springjparelations.facade;
 
+import com.example.springjparelations.annotation.Facade;
 import com.example.springjparelations.controller.ordercontroller.model.OrderRequest;
 import com.example.springjparelations.controller.ordercontroller.model.OrderResponse;
 import com.example.springjparelations.converter.OrderConverter;
@@ -9,7 +10,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-@Component
+@Facade
 public class OrderFacade {
     private final OrderService service;
     private final OrderConverter converter;

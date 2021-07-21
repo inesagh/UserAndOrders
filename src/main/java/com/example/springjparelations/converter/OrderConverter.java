@@ -1,5 +1,6 @@
 package com.example.springjparelations.converter;
 
+import com.example.springjparelations.annotation.Converter;
 import com.example.springjparelations.controller.ordercontroller.model.OrderResponse;
 import com.example.springjparelations.persistence.model.Order;
 import org.springframework.stereotype.Component;
@@ -7,7 +8,7 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@Component
+@Converter
 public class OrderConverter {
     public OrderResponse convertToResponse(Order order){
         OrderResponse orderResponse = new OrderResponse();

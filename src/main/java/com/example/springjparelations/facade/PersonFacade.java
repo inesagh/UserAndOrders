@@ -1,5 +1,6 @@
 package com.example.springjparelations.facade;
 
+import com.example.springjparelations.annotation.Facade;
 import com.example.springjparelations.controller.personcontroller.model.PersonRequest;
 import com.example.springjparelations.controller.personcontroller.model.PersonResponse;
 import com.example.springjparelations.converter.PersonConverter;
@@ -9,7 +10,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-@Component
+@Facade
 public class PersonFacade {
     private final PersonService service;
     private final PersonConverter converter;

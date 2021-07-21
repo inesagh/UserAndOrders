@@ -1,5 +1,6 @@
 package com.example.springjparelations.facade;
 
+import com.example.springjparelations.annotation.Facade;
 import com.example.springjparelations.controller.productcontroller.model.ProductRequest;
 import com.example.springjparelations.controller.productcontroller.model.ProductResponse;
 import com.example.springjparelations.converter.ProductConverter;
@@ -9,7 +10,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-@Component
+@Facade
 public class ProductFacade {
     private final ProductService service;
     private final ProductConverter converter;
