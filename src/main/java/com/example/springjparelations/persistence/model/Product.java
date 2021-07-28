@@ -1,7 +1,6 @@
 package com.example.springjparelations.persistence.model;
 
 import javax.persistence.*;
-import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -12,7 +11,12 @@ public class Product {
     private Long id;
     private String name;
     private String price;
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.LAZY,
+            cascade = {
+                    CascadeType.PERSIST,
+                    CascadeType.MERGE
+            },
+            mappedBy = "products")
     private List<Order> orders;
 
     public Product() {

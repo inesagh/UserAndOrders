@@ -15,8 +15,15 @@ public class Order {
     private String trackingNumber;
     @ManyToOne
     private Person person;
-    @ManyToMany
-    private List<Product> products = new ArrayList<>();
+    @ManyToMany(fetch = FetchType.LAZY,
+            cascade = {
+                    CascadeType.PERSIST,
+                    CascadeType.MERGE
+            })
+    @JoinTable(name = "order_product",
+            joinColumns = { @JoinColumn(name = "order_id") },
+            inverseJoinColumns = { @JoinColumn(name = "product_id") })
+    private List<Product> products;
 
     public Order() {
     }
